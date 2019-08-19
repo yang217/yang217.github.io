@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://yang217.github.io">
-  <title>Archives: 2019/6 | 让生活丰富起来</title>
+  <title>JS系列 | 让生活丰富起来</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="web,web前端,js,javascript,Vue,Vue2.0,微信开发,微信小程序,微信小程序开发">
+  <meta name="description" content="JS 系列一：var、let、const、解构、展开、函数引言JS系列暂定 27 篇，从基础，到原型，到异步，到设计模式，到架构模式等，此为第一篇：是对 var、let、const、解构、展开、函数 的总结。 let在很多方面与 var 是相似的，但是 let 可以帮助大家避免在 JavaScript 里常见一些问题。const 是对 let 的一个增强，它能阻止对一个变量再次赋值。 一、var">
+<meta name="keywords" content="web,web前端,js,javascript,Vue,Vue2.0,微信开发,微信小程序,微信小程序开发">
 <meta property="og:type" content="website">
-<meta property="og:title" content="让生活丰富起来">
-<meta property="og:url" content="https://yang217.github.io/archives/2019/06/index.html">
+<meta property="og:title" content="JS系列">
+<meta property="og:url" content="https://yang217.github.io/JS系列/index.html">
 <meta property="og:site_name" content="让生活丰富起来">
+<meta property="og:description" content="JS 系列一：var、let、const、解构、展开、函数引言JS系列暂定 27 篇，从基础，到原型，到异步，到设计模式，到架构模式等，此为第一篇：是对 var、let、const、解构、展开、函数 的总结。 let在很多方面与 var 是相似的，但是 let 可以帮助大家避免在 JavaScript 里常见一些问题。const 是对 let 的一个增强，它能阻止对一个变量再次赋值。 一、var">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-08-19T06:14:28.493Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="让生活丰富起来">
+<meta name="twitter:title" content="JS系列">
+<meta name="twitter:description" content="JS 系列一：var、let、const、解构、展开、函数引言JS系列暂定 27 篇，从基础，到原型，到异步，到设计模式，到架构模式等，此为第一篇：是对 var、let、const、解构、展开、函数 的总结。 let在很多方面与 var 是相似的，但是 let 可以帮助大家避免在 JavaScript 里常见一些问题。const 是对 let 的一个增强，它能阻止对一个变量再次赋值。 一、var">
   
     <link rel="alternative" href="/atom.xml" title="让生活丰富起来" type="application/atom+xml">
   
@@ -155,103 +159,242 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JS系列
+    </h1>
+  
+
+        
+        <a href="/JS系列/index.html" class="archive-article-date">
+  	<time datetime="2019-08-19T06:14:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-19</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>JS 系列一：var、let、const、解构、展开、函数<br>引言<br>JS系列暂定 27 篇，从基础，到原型，到异步，到设计模式，到架构模式等，此为第一篇：是对 var、let、const、解构、展开、函数 的总结。</p>
+<p>let在很多方面与 var 是相似的，但是 let 可以帮助大家避免在 JavaScript 里常见一些问题。const 是对 let 的一个增强，它能阻止对一个变量再次赋值。</p>
+<p>一、var 声明<br>一直以来我们都是通过 var 关键字定义 JavaScript 变量。</p>
+<p>var num = 1;<br>复制代码<br>定义了一个名为 num 值为 1 的变量。</p>
+<p>我们也可以在函数内部定义变量：</p>
+<p>function f() {<br>var message = “Hello, An!”;</p>
+<p>return message;<br>} 复制代码<br>并且我们也可以在其它函数内部访问相同的变量。</p>
+<p>function f() {<br>var num = 10;<br>return function g() {<br>var b = num + 1;<br>return b;<br>}
+}</p>
+<p>var g = f();<br>g(); // 11;<br>复制代码<br>上面的例子里，g 可以获取到 f 函数里定义的 num 变量。 每当 g 被调用时，它都可以访问到 f 里的 num 变量。 即使当 g 在 f 已经执行完后才被调用，它仍然可以访问及修改 num 。</p>
+<p>function f() {<br>var num = 1;</p>
+<p>num = 2;<br>var b = g();<br>num = 3;</p>
+<p>return b;</p>
+<p>function g() {<br>    return num;<br>}
+}</p>
+<p>f(); // 2<br>复制代码<br>作用域规则<br>对于熟悉其它语言的人来说，var 声明有些奇怪的作用域规则。 看下面的例子：</p>
+<p>function f(init) {<br>if (init) {<br>var x = 10;<br>}</p>
+<p>return x;<br>}</p>
+<p>f(true); // 10<br>f(false); // undefined<br>复制代码<br>在这个例子中，变量 x 是定义在 if 语句里面，但是我们却可以在语句的外面访问它。</p>
+<p>这是因为 var 声明可以在包含它的函数，模块，命名空间或全局作用域内部任何位置被访问，包含它的代码块对此没有什么影响。 有些人称此为 var 作用域或函数作用域 。 函数参数也使用函数作用域。</p>
+<p>这些作用域规则可能会引发一些错误。 其中之一就是，多次声明同一个变量并不会报错：</p>
+<p>function sumArr(arrList) {<br>var sum = 0;<br>for (var i = 0; i &lt; arrList.length; i++) {<br>var arr = arrList[i];<br>for (var i = 0; i &lt; arr.length; i++) {<br>sum += arr[i];<br>}
+}</p>
+<p>return sum;<br>} 复制代码<br>这里很容易看出一些问题，里层的 for 循环会覆盖变量 i，因为所有 i 都引用相同的函数作用域内的变量。 有经验的开发者们很清楚，这些问题可能在代码审查时漏掉，引发无穷的麻烦。</p>
+<p>捕获变量怪异之处<br>快速的思考一下下面的代码会返回什么：</p>
+<p>for (var i = 0; i &lt; 10; i++) {<br>setTimeout(function() { console.log(i); }, 100 * i);<br>} 复制代码<br>介绍一下，setTimeout会在若干毫秒的延时后执行一个函数（等待其它代码执行完毕）。</p>
+<p>好吧，看一下结果：</p>
+<p>10<br>10<br>10<br>10<br>10<br>10<br>10<br>10<br>10<br>10<br>复制代码<br>很多 JavaScript 程序员对这种行为已经很熟悉了，但如果你很不解，你并不是一个人。 大多数人期望输出结果是这样：</p>
+<p>0 1<br>2 3<br>4 5<br>6 7<br>8 9<br>复制代码<br>还记得我们上面提到的捕获变量吗？</p>
+<p>我们传给 setTimeout 的每一个函数表达式实际上都引用了相同作用域里的同一个 i。</p>
+<p>让我们花点时间思考一下这是为什么。 setTimeout 在若干毫秒后执行一个函数，并且是在 for 循环结束后。for 循环结束后，i 的值为 10。 所以当函数被调用的时候，它会打印出 10！</p>
+<p>一个通常的解决方法是使用立即执行的函数表达式（IIFE）来捕获每次迭代时i的值：</p>
+<p>for (var i = 0; i &lt; 10; i++) {<br>(function(i) {<br>setTimeout(function() { console.log(i); }, 100 * i);<br>})(i);<br>} 复制代码<br>这种奇怪的形式我们已经司空见惯了。 参数 i 会覆盖 for 循环里的 i ，但是因为我们起了同样的名字，所以我们不用怎么改 for 循环体里的代码。</p>
+<p>二、let 声明<br>现在你已经知道了 var 存在一些问题，这恰好说明了为什么用 let 语句来声明变量。 除了名字不同外， let 与 var 的写法一致。</p>
+<p>let hello = “Hello，An!”;<br>复制代码<br>主要的区别不在语法上，而是语义，我们接下来会深入研究。</p>
+<p>块作用域<br>当用 let 声明一个变量，它使用的是词法作用域或块作用域。 不同于使用 var 声明的变量那样可以在包含它们的函数外访问，块作用域变量在包含它们的块或 for 循环之外是不能访问的。</p>
+<p>function f(input) {<br>let a = 100;</p>
+<p>if (input) {<br>    // a 被正常引用<br>    let b = a + 1;<br>    return b;<br>}</p>
+<p>return b;<br>} 复制代码<br>这里我们定义了2个变量 a 和 b 。 a 的作用域是 f 函数体内，而 b 的作用域是 if 语句块里。</p>
+<p>在 catch 语句里声明的变量也具有同样的作用域规则。</p>
+<p>try {<br>throw “oh no!”;<br>} catch (e) {<br>console.log(“Oh well.”);<br>}</p>
+<p>// Error: ‘e’ doesn’t exist here<br>console.log(e);<br>复制代码<br>拥有块级作用域的变量的另一个特点是，它们不能在被声明之前读或写。 虽然这些变量始终“存在”于它们的作用域里，但在直到声明它的代码之前的区域都属于 暂时性死区。 它只是用来说明我们不能在 let 语句之前访问它们：</p>
+<p>a++;<br>// Uncaught ReferenceError: Cannot access ‘a’ before initialization<br>let a;<br>复制代码<br>注意一点，我们仍然可以在一个拥有块作用域变量被声明前获取它。 只是我们不能在变量声明前去调用那个函数。</p>
+<p>function foo() {<br>return a;<br>}</p>
+<p>// 不能在’a’被声明前调用’foo’<br>// 运行时应该抛出错误<br>foo();<br>// Uncaught ReferenceError: Cannot access ‘a’ before initialization</p>
+<p>let a;<br>复制代码<br>关于暂时性死区的更多信息，查看这里Mozilla Developer Network.</p>
+<p>重定义及屏蔽<br>我们提过使用 var 声明时，它不在乎你声明多少次；你只会得到1个。</p>
+<p>function f(x) {<br>var x;<br>var x;</p>
+<p>if (true) {<br>    var x;<br>}
+} 复制代码<br>在上面的例子里，所有 x 的声明实际上都引用一个相同的 x，并且这是完全有效的代码。 这经常会成为 bug 的来源。 好的是， let 声明就不会这么宽松了。</p>
+<p>let x = 10;<br>let x = 20;<br>// Uncaught SyntaxError: Identifier ‘x’ has already been declared<br>复制代码<br>并不是要求两个均是块级作用域的声明才会给出一个错误的警告。</p>
+<p>function f(x) {<br>let x = 100;<br>// Uncaught SyntaxError: Identifier ‘x’ has already been declared<br>}</p>
+<p>function g() {<br>let x = 100;<br>var x = 100;<br>// Uncaught SyntaxError: Identifier ‘x’ has already been declared<br>} 复制代码<br>并不是说块级作用域变量不能用函数作用域变量来声明。 而是块级作用域变量需要在明显不同的块里声明。</p>
+<p>function f(condition, x) {<br>if (condition) {<br>let x = 100;<br>return x;<br>}</p>
+<p>return x;<br>}</p>
+<p>f(false, 0); // 0<br>f(true, 0); // 100<br>复制代码<br>在一个嵌套作用域里引入一个新名字的行为称做 屏蔽 。 它是一把双刃剑，它可能会不小心地引入新问题，同时也可能会解决一些错误。 例如，假设我们现在用 let 重写之前的 sumArr 函数。</p>
+<p>function sumArr(arrList) {<br>let sum = 0;<br>for (let i = 0; i &lt; arrList.length; i++) {<br>var arr = arrList[i];<br>for (let i = 0; i &lt; arr.length; i++) {<br>sum += arr[i];<br>}
+}</p>
+<p>return sum;<br>} 复制代码<br>此时将得到正确的结果，因为内层循环的 i 可以屏蔽掉外层循环的 i 。</p>
+<p>通常来讲应该避免使用屏蔽，因为我们需要写出清晰的代码。 同时也有些场景适合利用它，你需要好好打算一下。</p>
+<p>块级作用域变量的获取<br>在我们最初谈及获取用 var 声明的变量时，我们简略地探究了一下在获取到了变量之后它的行为是怎样的。 直观地讲，每次进入一个作用域时，它创建了一个变量的环境。 就算作用域内代码已经执行完毕，这个环境与其捕获的变量依然存在。</p>
+<p>function theCityThatAlwaysSleeps() {<br>let getCity;</p>
+<p>if (true) {<br>    let city = “Seattle”;<br>    getCity = function() {<br>        return city;<br>    }<br>}</p>
+<p>return getCity();<br>} 复制代码<br>因为我们已经在 city 的环境里获取到了 city ，所以就算 if 语句执行结束后我们仍然可以访问它。</p>
+<p>回想一下前面 setTimeout 的例子，我们最后需要使用立即执行的函数表达式来获取每次 for 循环迭代里的状态。 实际上，我们做的是为获取到的变量创建了一个新的变量环境。</p>
+<p>当 let 声明出现在循环体里时拥有完全不同的行为。 不仅是在循环里引入了一个新的变量环境，而是针对每次迭代都会创建这样一个新作用域。 这就是我们在使用立即执行的函数表达式时做的事，所以在 setTimeout例子里我们仅使用 let 声明就可以了。</p>
+<p>for (let i = 0; i &lt; 10 ; i++) {<br>setTimeout(function() {console.log(i); }, 100 * i);<br>} 复制代码<br>会输出与预料一致的结果：</p>
+<p>0 1<br>2 3<br>4 5<br>6 7<br>8 9<br>复制代码<br>三、const 声明<br>const 声明是声明变量的另一种方式。</p>
+<p>const numLivesForCat = 9;<br>复制代码<br>它们与 let 声明相似，但是就像它的名字所表达的，它们被赋值后不能再改变。 换句话说，它们拥有与 let 相同的作用域规则，但是不能对它们重新赋值。</p>
+<p>这很好理解，它们引用的值是不可变的。</p>
+<p>const numLivesForCat = 9;<br>const kitty = {<br>name: “Aurora”,<br>numLives: numLivesForCat,<br>}</p>
+<p>// Error<br>kitty = {<br>name: “Danielle”,<br>numLives: numLivesForCat<br>};</p>
+<p>// all “okay”<br>kitty.name = “Rory”;<br>kitty.name = “Kitty”;<br>kitty.name = “Cat”;<br>kitty.numLives–;<br>复制代码<br>除非你使用特殊的方法去避免，实际上 const 变量的内部状态是可修改的。</p>
+<p>四、let vs. const<br>现在我们有两种作用域相似的声明方式，我们自然会问到底应该使用哪个。 与大多数泛泛的问题一样，答案是：依情况而定。</p>
+<p>使用最小特权原则，所有变量除了你计划去修改的都应该使用const。 基本原则就是如果一个变量不需要对它写入，那么其它使用这些代码的人也不能够写入它们，并且要思考为什么会需要对这些变量重新赋值。 使用 const也可以让我们更容易的推测数据的流动。</p>
+<p>跟据你的自己判断，如果合适的话，与团队成员商议一下。</p>
+<p>五、解构<br>解构数组<br>最简单的解构莫过于数组的解构赋值了：</p>
+<p>let input = [1, 2];<br>let [first, second] = input;<br>console.log(first); // 1<br>console.log(second); // 2<br>复制代码<br>这创建了2个命名变量 first 和 second。 相当于使用了索引，但更为方便：</p>
+<p>first = input[0];<br>second = input[1];<br>复制代码<br>解构作用于已声明的变量会更好：</p>
+<p>[first, second] = [second, first];<br>复制代码<br>作用于函数参数：</p>
+<p>function f([first, second]) {<br>console.log(first);<br>console.log(second);<br>} f(input);<br>复制代码<br>你可以在数组里使用 … 语法创建剩余变量：</p>
+<p>let [first, …rest] = [1, 2, 3, 4];<br>console.log(first); // 1<br>console.log(rest); // [ 2, 3, 4 ]<br>复制代码<br>当然，由于是JavaScript, 你可以忽略你不关心的尾随元素：</p>
+<p>let [first] = [1, 2, 3, 4];<br>console.log(first); // 1<br>复制代码<br>或其它元素：</p>
+<p>let [, second, , fourth] = [1, 2, 3, 4];<br>复制代码<br>对象解构<br>你也可以解构对象：</p>
+<p>let o = {<br>a: “foo”,<br>b: 12,<br>c: “bar”<br>};<br>let { a, b } = o;<br>复制代码<br>这通过 o.a and o.b 创建了 a 和 b 。 注意，如果你不需要 c 你可以忽略它。</p>
+<p>就像数组解构，你可以用没有声明的赋值：</p>
+<p>({ a, b } = { a: “baz”, b: 101 });<br>复制代码<br>注意，我们需要用括号将它括起来，因为 Javascript 通常会将以 { 起始的语句解析为一个块。</p>
+<p>你可以在对象里使用 … 语法创建剩余变量：</p>
+<p>let { a, …passthrough } = o;<br>let total = passthrough.b + passthrough.c.length;<br>复制代码<br>六、展开<br>展开操作符正与解构相反。 它允许你将一个数组展开为另一个数组，或将一个对象展开为另一个对象。 例如：</p>
+<p>let first = [1, 2];<br>let second = [3, 4];<br>let bothPlus = [0, …first, …second, 5];<br>复制代码<br>这会令 bothPlus 的值为 [0, 1, 2, 3, 4, 5] 。 展开操作创建了 first 和 second 的一份浅拷贝。 它们不会被展开操作所改变。</p>
+<p>你还可以展开对象：</p>
+<p>let defaults = { food: “spicy”, price: “$$”, ambiance: “noisy” };<br>let search = { …defaults, food: “rich” };<br>复制代码<br>search 的值为 { food: “rich”, price: “$$”, ambiance: “noisy” } 。 对象的展开比数组的展开要复杂的多。 像数组展开一样，它是从左至右进行处理，但结果仍为对象。 这就意味着出现在展开对象后面的属性会覆盖前面的属性。 因此，如果我们修改上面的例子，在结尾处进行展开的话：</p>
+<p>let defaults = { food: “spicy”, price: “$$”, ambiance: “noisy” };<br>let search = { food: “rich”, …defaults };<br>复制代码<br>那么，defaults 里的 food 属性会重写 food: “rich” ，在这里这并不是我们想要的结果。</p>
+<p>对象展开还有其它一些意想不到的限制。 首先，它仅包含对象 自身的可枚举属性。 大体上是说当你展开一个对象实例时，你会丢失其方法：</p>
+<p>class C {<br>p = 12;<br>m() {<br>}
+} let c = new C();<br>let clone = { …c };<br>clone.p; // ok<br>clone.m(); // error! 复制代码<br>附加：<br>箭头函数</p>
+<p>this 指向定义时的环境。<br>不可 new 实例化。<br>this 不可变。<br>没有 arguments 对象。<br>参考：</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/16/没有人可以回到过去，重新开始；/" class="archive-article-date">
-  	<time datetime="2019-06-16T03:52:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/16/没有人可以回到过去，重新开始；/">没有人可以回到过去，重新开始；</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://yang217.github.io/JS系列/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/13/杨豪测试/" class="archive-article-date">
-  	<time datetime="2019-06-13T15:15:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-13</time>
-</a>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/13/杨豪测试/">杨豪测试</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/13/hello-world/" class="archive-article-date">
-  	<time datetime="2019-06-13T15:03:49.215Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/13/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -275,7 +418,7 @@
 		mathjax: false,
 		isHome: false,
 		isPost: false,
-		isArchive: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
