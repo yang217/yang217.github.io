@@ -157,18 +157,27 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-linux常用命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Linux常用命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/19/Linux常用命令/">Linux常用命令</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/19/Linux常用命令/" class="archive-article-date">
+  	<time datetime="2019-08-19T06:55:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-19</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <!--
- * @Date: 2019-08-19 14:37:46
- * @LastEditors: Jack.yang
- * @LastEditTime: 2019-08-19 14:44:44
- -->
-
-<p>title: linux常用命令<br>date: 2019-08-19 14:37:46<br>tags:<br>原文链接：<a href="https://blog.csdn.net/ljianhui/article/details/11100625" target="_blank" rel="noopener">https://blog.csdn.net/ljianhui/article/details/11100625</a><br>玩过Linux的人都会知道，Linux中的命令的确是非常多，但是玩过Linux的人也从来不会因为Linux的命令如此之多而烦恼，因为我们只需要掌握我们最常用的命令就可以了。当然你也可以在使用时去找一下man，他会帮你解决不少的问题。然而每个人玩Linux的目的都不同，所以他们常用的命令也就差异非常大，而我主要是用Linux进行C/C++和shell程序编写的，所以常用到的命令可以就会跟一个管理Linux系统的人有所不同。因为不想在使用是总是东查西找，所以在此总结一下，方便一下以后的查看。不多说，下面就说说我最常用的Linux命令。</p>
+        <p>原文链接：<a href="https://blog.csdn.net/ljianhui/article/details/11100625" target="_blank" rel="noopener">https://blog.csdn.net/ljianhui/article/details/11100625</a><br>玩过Linux的人都会知道，Linux中的命令的确是非常多，但是玩过Linux的人也从来不会因为Linux的命令如此之多而烦恼，因为我们只需要掌握我们最常用的命令就可以了。当然你也可以在使用时去找一下man，他会帮你解决不少的问题。然而每个人玩Linux的目的都不同，所以他们常用的命令也就差异非常大，而我主要是用Linux进行C/C++和shell程序编写的，所以常用到的命令可以就会跟一个管理Linux系统的人有所不同。因为不想在使用是总是东查西找，所以在此总结一下，方便一下以后的查看。不多说，下面就说说我最常用的Linux命令。</p>
 <p>1、cd命令<br>这是一个非常基本，也是大家经常需要使用的命令，它用于切换当前目录，它的参数是要切换到的目录的路径，可以是绝对路径，也可以是相对路径。如：<br>cd /root/Docements # 切换到目录/root/Docements<br>cd ./path          # 切换到当前目录下的path目录中，“.”表示当前目录<br>cd ../path         # 切换到上层目录中的path目录中，“..”表示上一层目录<br>2、ls命令<br>这是一个非常有用的查看文件与目录的命令，list之意，它的参数非常多，下面就列出一些我常用的参数吧，如下：<br>-l ：列出长数据串，包含文件的属性与权限数据等<br>-a ：列出全部的文件，连同隐藏文件（开头为.的文件）一起列出来（常用）<br>-d ：仅列出目录本身，而不是列出目录的文件数据<br>-h ：将文件容量以较易读的方式（GB，kB等）列出来<br>-R ：连同子目录的内容一起列出（递归列出），等于该目录下的所有文件都会显示出来<br>注：这些参数也可以组合使用，下面举两个例子：<br>ls -l #以长数据串的形式列出当前目录下的数据文件和目录<br>ls -lR #以长数据串的形式列出当前目录下的所有文件<br>3、grep命令<br>该命令常用于分析一行的信息，若当中有我们所需要的信息，就将该行显示出来，该命令通常与管道命令一起使用，用于对一些命令的输出进行筛选加工等等，它的简单语法为<br>grep [-acinv] [–color=auto] ‘查找字符串’ filename<br>它的常用参数如下：<br>-a ：将binary文件以text文件的方式查找数据<br>-c ：计算找到‘查找字符串’的次数<br>-i ：忽略大小写的区别，即把大小写视为相同<br>-v ：反向选择，即显示出没有‘查找字符串’内容的那一行</p>
 <h1 id="例如："><a href="#例如：" class="headerlink" title="例如："></a>例如：</h1><h1 id="取出文件-etc-man-config中包含MANPATH的行，并把找到的关键字加上颜色"><a href="#取出文件-etc-man-config中包含MANPATH的行，并把找到的关键字加上颜色" class="headerlink" title="取出文件/etc/man.config中包含MANPATH的行，并把找到的关键字加上颜色"></a>取出文件/etc/man.config中包含MANPATH的行，并把找到的关键字加上颜色</h1><p>grep –color=auto ‘MANPATH’ /etc/man.config</p>
 <h1 id="把ls-l的输出中包含字母file（不区分大小写）的内容输出"><a href="#把ls-l的输出中包含字母file（不区分大小写）的内容输出" class="headerlink" title="把ls -l的输出中包含字母file（不区分大小写）的内容输出"></a>把ls -l的输出中包含字母file（不区分大小写）的内容输出</h1><p>ls -l | grep -i file<br>4、find命令<br>find是一个基于查找的功能非常强大的命令，相对而言，它的使用也相对较为复杂，参数也比较多，所以在这里将给把它们分类列出，它的基本语法如下：<br>find [PATH] [option] [action]</p>
@@ -204,7 +213,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/19/linux常用命令/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/08/19/Linux常用命令/">展开全文 >></a>
         </p>
       
 
