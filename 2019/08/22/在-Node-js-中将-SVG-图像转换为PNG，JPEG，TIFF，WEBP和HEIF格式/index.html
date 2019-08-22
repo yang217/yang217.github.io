@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://yang217.github.io">
-  <title>Archives: 2019/8 | 让生活丰富起来</title>
+  <title>在 Node.js 中将 SVG 图像转换为PNG，JPEG，TIFF，WEBP和HEIF格式 | 让生活丰富起来</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="web,web前端,js,javascript,Vue,Vue2.0,微信开发,微信小程序,微信小程序开发">
-<meta property="og:type" content="website">
-<meta property="og:title" content="让生活丰富起来">
-<meta property="og:url" content="https://yang217.github.io/archives/2019/08/index.html">
+  <meta name="description" content="介绍你需要将SVG文件转换为PNG、JPEG、TIFF、WEBP 和 HEIF 格式吗？本文将指导你如何转换为所有这些类型的格式。">
+<meta name="keywords" content="web,web前端,js,javascript,Vue,Vue2.0,微信开发,微信小程序,微信小程序开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在 Node.js 中将 SVG 图像转换为PNG，JPEG，TIFF，WEBP和HEIF格式">
+<meta property="og:url" content="https://yang217.github.io/2019/08/22/在-Node-js-中将-SVG-图像转换为PNG，JPEG，TIFF，WEBP和HEIF格式/index.html">
 <meta property="og:site_name" content="让生活丰富起来">
+<meta property="og:description" content="介绍你需要将SVG文件转换为PNG、JPEG、TIFF、WEBP 和 HEIF 格式吗？本文将指导你如何转换为所有这些类型的格式。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-08-22T10:59:24.866Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="让生活丰富起来">
+<meta name="twitter:title" content="在 Node.js 中将 SVG 图像转换为PNG，JPEG，TIFF，WEBP和HEIF格式">
+<meta name="twitter:description" content="介绍你需要将SVG文件转换为PNG、JPEG、TIFF、WEBP 和 HEIF 格式吗？本文将指导你如何转换为所有这些类型的格式。">
   
     <link rel="alternative" href="/atom.xml" title="让生活丰富起来" type="application/atom+xml">
   
@@ -155,157 +159,236 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <!--
+ * @Date: 2019-08-19 13:00:26
+ * @LastEditors: Jack.yang
+ * @LastEditTime: 2019-08-19 15:16:37
+ -->
+<article id="post-在-Node-js-中将-SVG-图像转换为PNG，JPEG，TIFF，WEBP和HEIF格式" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      在 Node.js 中将 SVG 图像转换为PNG，JPEG，TIFF，WEBP和HEIF格式
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/22/在-Node-js-中将-SVG-图像转换为PNG，JPEG，TIFF，WEBP和HEIF格式/" class="archive-article-date">
+
+        
+        <a href="/2019/08/22/在-Node-js-中将-SVG-图像转换为PNG，JPEG，TIFF，WEBP和HEIF格式/" class="archive-article-date">
   	<time datetime="2019-08-22T10:51:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-22</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/22/在-Node-js-中将-SVG-图像转换为PNG，JPEG，TIFF，WEBP和HEIF格式/">在 Node.js 中将 SVG 图像转换为PNG，JPEG，TIFF，WEBP和HEIF格式</a>
-    </h1>
-  
+             <!-- 开始添加字数统计-->
+             
+              <!--
+ * @Date: 2019-08-19 15:14:33
+ * @LastEditors: Jack.yang
+ * @LastEditTime: 2019-08-19 15:14:43
+ -->
+<div style="margin-top:10px;">
+        <span class="post-time">
+          <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <span class="post-meta-item-text">  字数统计: </span>
+            <span class="post-count">891字</span>
+          </span>
+        </span>
+    
+        <span class="post-time">
+          &nbsp; | &nbsp;
+          <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <span class="post-meta-item-text">  阅读时长: </span>
+            <span class="post-count">3分</span>
+          </span>
+        </span>
+    </div>
 
-        <div class="article-info info-on-right">
-          
-          
+              
+            <!-- 添加完成 -->
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>介绍<br>你需要将SVG文件转换为PNG、JPEG、TIFF、WEBP 和 HEIF 格式吗？本文将指导你如何转换为所有这些类型的格式。<br> <a id="more"></a><br>我们将使用 Node.js 和Sharp npm 包来完成大部分繁重的工作。<br>&lt;–more–&gt;<br>目录<br>安装 Sharp Npm 包<br>SVG 转 PNG<br>SVG 转 JPEG<br>SVG 转 TIFF<br>SVG 转 WEBP<br>SVG 转 HEIF<br>安装Sharp Npm Package<br>首先你需要安装 npm 包。你可以使用下面的 npm 或 yarn 命令安装：</p>
+<p>Npm</p>
+<p>$ npm install sharp –save<br>Yarn</p>
+<p>$ yarn add sharp<br>现在我们已经准备好开始编写一些代码并转换图像了！</p>
+<p>SVG 转 PNG<br>对于第一个例子，我们将 SVG文 件转换为可移植网络图形（PNG）文件格式。确保你在项目目录的根目录中有一个可用的 SVG 文件。</p>
+<p>这是完整的代码：</p>
+<p>// Node.js</p>
+<p>const sharp = require(“sharp”)</p>
+<p>sharp(“file.svg”)<br>    .png()<br>    .toFile(“new-file.png”)<br>    .then(function(info) {<br>        console.log(info)<br>    })<br>    .catch(function(err) {<br>        console.log(err)<br>    })<br>让我们分解代码的每个部分：</p>
+<p>首先，导入 sharp 包并将其保存在 sharp 变量中。<br>然后，我们用 sharp 包来读取我们的 file.svg 文件，将其转换为 PNG 并使用 .toFile() 函数将新的 PNG文件写入你的目录。<br>sharp 方法是一个 promise，我们用它来获取文件的 info。<br>最后，我们用 .catch() 方法来捕获并 console.log() 所有错误。<br>当你运行代码时，应该得到类似的输出：</p>
+<p>{
+    format: ‘png’,<br>    width: 2500,<br>    height: 527,<br>    channels: 4,<br>    premultiplied: false,<br>    size: 47194<br>}
+你应该能够在项目目录中看到新的 PNG 文件。</p>
+<p>还可以将其他选项传递给 .png() 方法来更改输出图像。这些包括压缩级别、质量、颜色等。你可以在文档中查看它们。</p>
+<p>SVG 转 JPEG<br>现在，让我们将 SVG 文件转换为 JPEG 格式。确保项目目录的根目录中有一个 SVG 文件可供使用。</p>
+<p>这是完整的代码：</p>
+<p>const sharp = require(“sharp”)<br>sharp(“file.svg”)<br>    .png()<br>    .toFile(“new-file.jpg”)<br>    .then(function(info) {<br>        console.log(info)<br>    })<br>    .catch(function(err) {<br>        console.log(err)<br>    })<br>当运行代码时，你应该得到类似的输出：</p>
+<p>{
+   format: ‘jpg’,<br>   width: 2500,<br>   height: 527,<br>   channels: 4,<br>   premultiplied: false,<br>   size: 47194<br>}
+你应该在项目目录中看到新的JPEG文件。</p>
+<p>文档：<a href="http://sharp.pixelplumbing.co...。" target="_blank" rel="noopener">http://sharp.pixelplumbing.co...。</a></p>
+<p>SVG 转 TIFF<br>接下来，让我们将SVG文件转换为标记图像文件格式（TIFF）文件。确保你在项目目录的根目录中有一个我们可以使用的SVG文件。</p>
+<p>这是完整的代码：</p>
+<p>const sharp = require(“sharp”)</p>
+<p>sharp(“file.svg”)<br>  .tiff()<br>  .toFile(“new-file.tiff”)<br>  .then(function(info) {<br>    console.log(info)<br>  })<br>  .catch(function(err) {<br>    console.log(err)<br>  })<br>当你运行代码时，应该得到类似的输出：</p>
+<p>{
+    format: ‘tiff’,<br>    width: 2500,<br>    height: 527,<br>    channels: 3,<br>    premultiplied: false,<br>    size: 65778<br>}
+你应该在项目目录中看到新的TIFF文件。</p>
+<p>文档：<a href="http://sharp.pixelplumbing.co...。" target="_blank" rel="noopener">http://sharp.pixelplumbing.co...。</a></p>
+<p>SVG到WEBP<br>接下来，将 SVG 文件转换为 WEBP 文件格式。确保你在项目目录的根目录中有一个我们可以使用的SVG文件。</p>
+<p>这是完整的代码：</p>
+<p>const sharp = require(“sharp”)</p>
+<p>sharp(“file.svg”)<br>  .webp()<br>  .toFile(“new-file.webp”)<br>  .then(function(info) {<br>    console.log(info)<br>  })<br>  .catch(function(err) {<br>    console.log(err)<br>  })<br>输出：</p>
+<p>{
+  format: ‘webp’,<br>  width: 2500,<br>  height: 527,<br>  channels: 4,<br>  premultiplied: false,<br>  size: 35600<br>}
+你应该在项目目录中看到新的WEBP文件。</p>
+<p>文档：<a href="http://sharp.pixelplumbing.co...。" target="_blank" rel="noopener">http://sharp.pixelplumbing.co...。</a></p>
+<p>SVG到HEIF<br>最后一个例子，让我们将 SVG 文件转换为高效图像文件（HEIF）格式。确保你在项目目录的根目录中有一个可用的SVG文件。</p>
+<p>这是完整的代码：</p>
+<p>const sharp = require(“sharp”)</p>
+<p>sharp(“file.svg”)<br>  .png()<br>  .toFile(“new-file.heif”)<br>  .then(function(info) {<br>    console.log(info)<br>  })<br>  .catch(function(err) {<br>    console.log(err)<br>  })<br>你还应该在项目目录中看到新的HEIF文件。</p>
+<p>文档： <a href="http://sharp.pixelplumbing.co...。" target="_blank" rel="noopener">http://sharp.pixelplumbing.co...。</a></p>
 
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://yang217.github.io/2019/08/22/在-Node-js-中将-SVG-图像转换为PNG，JPEG，TIFF，WEBP和HEIF格式/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  <!--
+ * @Date: 2019-08-19 13:00:26
+ * @LastEditors: Jack.yang
+ * @LastEditTime: 2019-08-19 15:36:40
+ -->
+
+<nav id="article-nav">
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/21/端口转发/" class="archive-article-date">
-  	<time datetime="2019-08-21T10:48:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-21</time>
-</a>
+  
+    <a href="/2019/08/21/端口转发/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">端口转发</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/21/端口转发/">端口转发</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/20/分享个网络技术书站点/" class="archive-article-date">
-  	<time datetime="2019-08-20T02:15:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/20/分享个网络技术书站点/">分享个网络技术书站点</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/19/Linux常用命令/" class="archive-article-date">
-  	<time datetime="2019-08-19T06:55:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/19/Linux常用命令/">Linux常用命令</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/19/JS-系列-转载/" class="archive-article-date">
-  	<time datetime="2019-08-19T06:09:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/19/JS-系列-转载/">JS 系列 转载</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -328,8 +411,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
