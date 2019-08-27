@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://yang217.github.io">
-  <title>Archives: 2019/8 | 让生活丰富起来</title>
+  <title>浅谈网络掩码(转） | 让生活丰富起来</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="web,web前端,js,javascript,Vue,Vue2.0,微信开发,微信小程序,微信小程序开发">
-<meta property="og:type" content="website">
-<meta property="og:title" content="让生活丰富起来">
-<meta property="og:url" content="https://yang217.github.io/archives/2019/08/index.html">
+  <meta name="description" content="清晰地记得在知乎第一次回答网络掩码的问题，感觉已经写的很浅显了，但是一看评论区，还是有很多读者没有理解网络掩码到底是怎么一回事。于是开始仔细回忆当初自己是怎么理解网络掩码的，接下来的文字就是当初理解的过程，望能够给读者一点启发和帮助。">
+<meta name="keywords" content="web,web前端,js,javascript,Vue,Vue2.0,微信开发,微信小程序,微信小程序开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅谈网络掩码(转）">
+<meta property="og:url" content="https://yang217.github.io/2019/08/27/浅谈网络掩码/index.html">
 <meta property="og:site_name" content="让生活丰富起来">
+<meta property="og:description" content="清晰地记得在知乎第一次回答网络掩码的问题，感觉已经写的很浅显了，但是一看评论区，还是有很多读者没有理解网络掩码到底是怎么一回事。于是开始仔细回忆当初自己是怎么理解网络掩码的，接下来的文字就是当初理解的过程，望能够给读者一点启发和帮助。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-08-27T03:49:38.084Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="让生活丰富起来">
+<meta name="twitter:title" content="浅谈网络掩码(转）">
+<meta name="twitter:description" content="清晰地记得在知乎第一次回答网络掩码的问题，感觉已经写的很浅显了，但是一看评论区，还是有很多读者没有理解网络掩码到底是怎么一回事。于是开始仔细回忆当初自己是怎么理解网络掩码的，接下来的文字就是当初理解的过程，望能够给读者一点启发和帮助。">
   
     <link rel="alternative" href="/atom.xml" title="让生活丰富起来" type="application/atom+xml">
   
@@ -155,160 +159,301 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <!--
+ * @Date: 2019-08-19 13:00:26
+ * @LastEditors: Jack.yang
+ * @LastEditTime: 2019-08-19 15:16:37
+ -->
+<article id="post-浅谈网络掩码" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      浅谈网络掩码(转）
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/27/浅谈网络掩码/" class="archive-article-date">
+
+        
+        <a href="/2019/08/27/浅谈网络掩码/" class="archive-article-date">
   	<time datetime="2019-08-27T03:48:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-27</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/27/浅谈网络掩码/">浅谈网络掩码(转）</a>
-    </h1>
-  
+             <!-- 开始添加字数统计-->
+             
+              <!--
+ * @Date: 2019-08-19 15:14:33
+ * @LastEditors: Jack.yang
+ * @LastEditTime: 2019-08-19 15:14:43
+ -->
+<div style="margin-top:10px;">
+        <span class="post-time">
+          <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <span class="post-meta-item-text">  字数统计: </span>
+            <span class="post-count">2.4k字</span>
+          </span>
+        </span>
+    
+        <span class="post-time">
+          &nbsp; | &nbsp;
+          <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <span class="post-meta-item-text">  阅读时长: </span>
+            <span class="post-count">8分</span>
+          </span>
+        </span>
+    </div>
 
-        <div class="article-info info-on-right">
-          
-          
+              
+            <!-- 添加完成 -->
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>清晰地记得在知乎第一次回答网络掩码的问题，感觉已经写的很浅显了，但是一看评论区，还是有很多读者没有理解网络掩码到底是怎么一回事。于是开始仔细回忆当初自己是怎么理解网络掩码的，接下来的文字就是当初理解的过程，望能够给读者一点启发和帮助。</p>
+<a id="more"></a>
+<p>先抛开网络掩码不谈，咱们从最简单的开始，假定有一台主机，IP地址 = 1.1.1.1，没有网络掩码，连接在互联网上，问题来了，这台主机如何访问Internet上亿亿万万其它主机？</p>
+<p>这还不简单，只要主机发送一个ARP广播，获得对方的MAC地址，那么就可以直接通信了啊，这是我当初美好的憧憬。这意味着全球所有主机都位于一个广播域，否则无法完成以上乌托邦式的幻想，对吗？</p>
+<p>这样的网络通信可能吗？</p>
+<p>全球20亿+的主机，每台主机每天发送的一条ARP广播，网络里就会被广播消息所挤满，压根没有带宽给主机们通信。</p>
+<p>这样的网络安全吗？</p>
+<p>一台恶意的主机，每天周期性地向网络里扔广播包，网络就会瘫痪。</p>
+<p>综上所述，以上纯属不切实际的幻想。</p>
+<p>计算机网络的先驱们是如何完美解决这个问题的？</p>
+<p>主要归纳为以下几点：</p>
+<p>1  将Internet分割成千千万万个广播域</p>
+<p>2  一个广播域对应一个网段</p>
+<p>3  一个网段内的主机之间的通信，通过ARP广播发现对方的MAC地址，直接通信</p>
+<p>4  不同网段的主机之间的通信，需要把IP报文发给各自的网关，由网关代理转发通信</p>
+<p>5  每个网段需要至少一台网关</p>
+<p>6  一个网段的主机与其网关处于同一个网段，它们之间的通信方式请参考3</p>
+<p>7  最最令人匪夷所思的一点在这里概括，这一点阻碍千千万万计算机网络初学者快速学习网络</p>
+<p>7.1  主机与自己网关的直接通信</p>
+<p>二层目的MAC = 网关的MAC</p>
+<p>三层目的IP   = 网关的IP</p>
+<p>7.2  主机A与其它网段的主机B通信，需要把流量发给自己的网关，代理通信</p>
+<p>二层目的MAC = 网关的MAC</p>
+<p>三层目的IP   = 主机B的IP</p>
+<p>8  广播报文的活动范围仅限该广播域，网关收到广播报文不得将其从其它接口广播出去</p>
+<p>问题又来了，如何将Internet分割成若干个广播域呢？</p>
+<p>先来看一个例子：</p>
+<p>主机A = 1.1.1.1</p>
+<p>主机B = 1.1.1.129</p>
+<p>主机C = 1.1.2.3</p>
+<p>主机A想和主机B、C通信，是直接通信？还是网关代理转发通信？</p>
+<p>主机A无从知道主机B、C是否和自己在同一个网段。</p>
+<p>如果B、C和自己不在一个广播域，却使用ARP广播，是无论如何也发现不了对方的MAC地址，更谈不上通信。</p>
+<p>如果B、C和自己在一个广播域，却使用网关代理通信，最终流量会被重定向到目的地，造成资源的浪费。</p>
+<p>为了避免通信的不确定性，先驱们总要想点措施，让主机A可以独立判断是何种通信方式。这个措施就是网络掩码！</p>
+<p>网络掩码</p>
+<p>主机A = 1.1.1.1     255.255.255.0(网络掩码)</p>
+<p>主机B = 1.1.1.131   255.255.255.0(网络掩码)</p>
+<p>主机C = 1.1.2.3     255.255.255.0 (网络掩码)</p>
+<p>主机A与主机B的通信</p>
+<p>主机A用IP“1.1.1.1”与掩码“255.255.255.0”按位与，得到网段1.1.1.0。</p>
+<p>主机A把主机B的IP “1.1.1.131”也采用相同的操作，也得到网段1.1.1.0。</p>
+<p>既然网段相同，那么没什么好说的，直接发送ARP广播，就可以发IP报文发给对方了。</p>
+<p>主机B的动作还A是一样的，反向的IP报文也可以流动到主机A，双向IP报文自由流动，并完成通信。</p>
+<p>主机A与主机C的通信</p>
+<p>A的网段 = 1.1.1.0</p>
+<p>C的网段 = 1.1.2.0</p>
+<p>既然不同，那么就需要网关介入。假定A的网关IP = 1.1.1.254。</p>
+<p>于是ARP广播发现网关的MAC地址，然后把IP报文发给网关。</p>
+<p>Destination MAC = 网关的MAC</p>
+<p>Destination IP Address   = 1.1.2.3</p>
+<p>网关接收到该IP报文，剥除掉二层以太网头部封装，那么就剩下IP报文了。</p>
+<p>如果网关的某一个接口的IP地址，网段也是“1.1.2.0”，那么剩下的问题又变成了同一个网段的通信了，不是吗？</p>
+<p>否则，网关会根据IP报文的目的IP  =“1.1.2.3”查找路由表，发给更靠近目的地“1.1.2.3”的下一跳路由器。</p>
+<p>网络掩码为255.255.255.0的网段可以容纳多少台主机？</p>
+<p>以主机A = 1.1.1.1 为例，掩码“255.255.255.0”一共24个二进制1，所以主机的IP 也经常写做1.1.1.1/24，其中的24就是掩码的长度，这个长度也是二进制1的长度。</p>
+<p>24个二进制1，三个字节，也意味着主机A的从左到右的三个字节代表着网段，既1.1.1，那么右边剩下的一个字节就是主机可以使用地址空间了，可以这样来表示：</p>
+<p>1.1.1.X</p>
+<p>其中的X表示0-255的任意数字，那么这个网段一共有多少个地址空间呢？</p>
+<p>0-255，一共256个地址。</p>
+<p>1.1.1.0</p>
+<p>通常保留，表示该网段地址，主机无法使用。</p>
+<p>1.1.1.255</p>
+<p>通常保留为该网段的广播地址，主机也无法使用。</p>
+<p>那么该网段主机一共可以使用的IP地址= 256-2 =254个。</p>
+<p>那么就可以得到公式：</p>
+<p>网段可用的IP = 2 (32-掩码长度) – 2</p>
+<p>如果想让一个广播域的主机变少，只需要将网络掩码的长度变长，比如</p>
+<p>掩码长度为25，则得到</p>
+<p>网段可用的IP = 2 (32-25)-2 = 27-2 = 128 -2 =126</p>
+<p>掩码长度为26，则得到</p>
+<p>网段可用的IP = 2 (32-26)-2 = 26-2 = 64 -2 =62</p>
+<p>假设主机A与主机B的网络掩码长度为255.255.255.128，二进制长度为25位，则</p>
+<p>主机A = 1.1.1.1/25</p>
+<p>主机B = 1.1.1.131/25</p>
+<p>那它们还在不在一个网段呢？</p>
+<p>计算一下便知，</p>
+<p>主机A的网段 = 1.1.1.0</p>
+<p>主机B的网段 = 1.1.1.1228</p>
+<p>很显然不在一个网段，那么就不能直接通信，需要借助网关才可以通信，不是吗？</p>
+<p>看出来网络掩码的神奇之处了吗？</p>
+<p>网络掩码的长度将决定着主机们是否在一个网段的唯一标尺。</p>
+<p>如果想让广播域变小，即广播域里容纳的主机变少，可以增加网络掩码的长度。</p>
+<p>如果想让广播域容纳更多的主机，将广播域变大，可以减小网络掩码的长度。</p>
+<p>关于上一篇文章，为何网络掩码必须由连续的1或0组成，这里需要补充说明一点。</p>
+<p>老王的资产：</p>
+<p>8.x.x.x</p>
+<p>8/8</p>
+<p>老王的掩码长度为8，这个网段可以容纳主机 = 2(32-8)-2 = 224-2 = 16777214</p>
+<p>上文也说过，如果想把该网段切割得更小一点，比如平均切割成两个，那么只要网络掩码增加一位即可。分割之后得两个网段分给两个儿子，其中：</p>
+<p>王大明 8.0.x.x -8.127.x.x</p>
+<p>8.0/9</p>
+<p>王小明 8.128.x.x -8.255.x.x</p>
+<p>8.128/9</p>
+<p>很简单，只要将网络掩码长度增加1，分别找到两个网段得起始点，就可以表示两个网段了。</p>
+<p>小明的大儿子，又分得小明一半的家产：</p>
+<p>8.128/10</p>
+<p>如果8.128/10网段的主机与8.0/10网段的主机通信，很显然这是不同网段的通信，需要网关介入才可以通信，对吗？</p>
+<p>但如果掩码不是连续的1，而是这个样子的“11111111.01”</p>
+<p>我们来重新计算 8.128.x.x 网段，都换算成二进制：</p>
+<p>00001000.10  11111111.01</p>
+<p>以上两者按位与的结果是</p>
+<p>00001000.00 = 8.0</p>
+<p>小明的大儿子的网段竟然和王大明是相同的，既然相同网段，那么使用ARP广播就可以发现王大明网段主机的MAC地址了？</p>
+<p>可是它们并不是一个网段的，中间有网关的分割，ARP广播无法到达对方，因为网关会自动终结ARP广播报文。</p>
+<p>而它们明明可以使用网关通信的啊！现在由于掩码的1的不连续，却无法通信！</p>
+<p>而要避免这种通信的不确定性，所以要求网络掩码从左到右需要连续的1，中间不能夹杂着0。</p>
+<p>文章转载自微信公众号—车小胖谈网络，浅谈网络掩码(<a href="https://mp.weixin.qq.com/s/86fyNrRCPdsSsEKCq2BEhA" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/86fyNrRCPdsSsEKCq2BEhA</a>)</p>
 
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://yang217.github.io/2019/08/27/浅谈网络掩码/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  <!--
+ * @Date: 2019-08-19 13:00:26
+ * @LastEditors: Jack.yang
+ * @LastEditTime: 2019-08-19 15:36:40
+ -->
+
+<nav id="article-nav">
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/25/史上最污技术解读，我竟然秒懂了/" class="archive-article-date">
-  	<time datetime="2019-08-25T06:41:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-25</time>
-</a>
+  
+    <a href="/2019/08/25/史上最污技术解读，我竟然秒懂了/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">史上最污技术解读，我竟然秒懂了</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/25/史上最污技术解读，我竟然秒懂了/">史上最污技术解读，我竟然秒懂了</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/23/Untitled/" class="archive-article-date">
-  	<time datetime="2019-08-23T11:17:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/23/Untitled/">为什么要学linux(转载）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/22/在-Node-js-中将-SVG-图像转换为PNG，JPEG，TIFF，WEBP和HEIF格式/" class="archive-article-date">
-  	<time datetime="2019-08-22T10:51:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/22/在-Node-js-中将-SVG-图像转换为PNG，JPEG，TIFF，WEBP和HEIF格式/">在 Node.js 中将 SVG 图像转换为PNG，JPEG，TIFF，WEBP和HEIF格式</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/21/端口转发/" class="archive-article-date">
-  	<time datetime="2019-08-21T10:48:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/21/端口转发/">端口转发</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2019/08/page/2/">2</a><a class="extend next" rel="next" href="/archives/2019/08/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -332,8 +477,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
