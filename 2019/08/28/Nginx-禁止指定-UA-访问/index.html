@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://yang217.github.io">
-  <title>让生活丰富起来</title>
+  <title>Nginx 禁止指定 UA 访问 | 让生活丰富起来</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="web,web前端,js,javascript,Vue,Vue2.0,微信开发,微信小程序,微信小程序开发">
-<meta property="og:type" content="website">
-<meta property="og:title" content="让生活丰富起来">
-<meta property="og:url" content="https://yang217.github.io/page/2/index.html">
+  <meta name="description" content="UA，即 Http User Agent，在 Nginx 中使用内置变量 $http_user_agent 表示，该信息作为 request header 的一部分被发往 webserver。因此，对 webserver 来说，有一种禁止访问的方式，就是对 UA 进行判断。">
+<meta name="keywords" content="web,web前端,js,javascript,Vue,Vue2.0,微信开发,微信小程序,微信小程序开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nginx 禁止指定 UA 访问">
+<meta property="og:url" content="https://yang217.github.io/2019/08/28/Nginx-禁止指定-UA-访问/index.html">
 <meta property="og:site_name" content="让生活丰富起来">
+<meta property="og:description" content="UA，即 Http User Agent，在 Nginx 中使用内置变量 $http_user_agent 表示，该信息作为 request header 的一部分被发往 webserver。因此，对 webserver 来说，有一种禁止访问的方式，就是对 UA 进行判断。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-08-28T10:43:30.482Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="让生活丰富起来">
+<meta name="twitter:title" content="Nginx 禁止指定 UA 访问">
+<meta name="twitter:description" content="UA，即 Http User Agent，在 Nginx 中使用内置变量 $http_user_agent 表示，该信息作为 request header 的一部分被发往 webserver。因此，对 webserver 来说，有一种禁止访问的方式，就是对 UA 进行判断。">
   
     <link rel="alternative" href="/atom.xml" title="让生活丰富起来" type="application/atom+xml">
   
@@ -155,27 +159,25 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <!--
+            <!--
  * @Date: 2019-08-19 13:00:26
  * @LastEditors: Jack.yang
  * @LastEditTime: 2019-08-19 15:16:37
  -->
-<article id="post-端口转发" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+<article id="post-Nginx-禁止指定-UA-访问" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/21/端口转发/">端口转发</a>
+    <h1 class="article-title" itemprop="name">
+      Nginx 禁止指定 UA 访问
     </h1>
   
 
         
-        <a href="/2019/08/21/端口转发/" class="archive-article-date">
-  	<time datetime="2019-08-21T10:48:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-21</time>
+        <a href="/2019/08/28/Nginx-禁止指定-UA-访问/" class="archive-article-date">
+  	<time datetime="2019-08-28T10:42:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-28</time>
 </a>
              <!-- 开始添加字数统计-->
              
@@ -189,7 +191,7 @@
           <span class="post-meta-item-icon">
             <i class="fa fa-keyboard-o"></i>
             <span class="post-meta-item-text">  字数统计: </span>
-            <span class="post-count">529字</span>
+            <span class="post-count">346字</span>
           </span>
         </span>
     
@@ -198,7 +200,7 @@
           <span class="post-meta-item-icon">
             <i class="fa fa-hourglass-half"></i>
             <span class="post-meta-item-text">  阅读时长: </span>
-            <span class="post-count">2分</span>
+            <span class="post-count">1分</span>
           </span>
         </span>
     </div>
@@ -210,30 +212,118 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>　对于 Vista 以及更新版本的 Windows （比如 Win7 Win8 …）可以直接使用该方案。<br>
-        
-          <a class="article-more-a" href="/2019/08/21/端口转发/#more">more >></a>
-        
+        <p>UA，即 Http User Agent，在 Nginx 中使用内置变量 $http_user_agent 表示，该信息作为 request header 的一部分被发往 webserver。因此，对 webserver 来说，有一种禁止访问的方式，就是对 UA 进行判断。</p>
+<a id="more"></a>
+<p>禁止搜索引擎爬虫<br>因为你懂的原因，并不是太希望 Baidu 这类爬虫来我的网站，所以在 Nginx 中使用 if 对 UA 进行判断：</p>
+<pre><code>if ($http_user_agent ~* &quot;qihoobot|Baidu|Baiduspider|Baiduspider-image|Baiduspider-video|Baiduspider-news|Baiduspider-favo|Baiduspider-cpro|Baiduspider-ads|Baiduboxapp|YisouSpider|EasouSpider|YodaoBot|YoudaoBot|Sosospider|Sogou|^$&quot;) {         return 444;     } </code></pre><p>禁止下载工具<br>    if ($http_user_agent ~* “Scrapy|HttpClient|Curl|Wget|Idm|Aria2|Axel|Thunder|Youtube-dl|Movgrab|rtorrent|ctorrent|Transmission-cli|vuze”) {         return 444;     }<br>禁止国产浏览器访问<br>    if ($http_user_agent ~* “360|360SE|360EE|2345Explorer|maxthon|sogou|theworld|qiyu|green|qq|qqbrowser|tt|liebao|lbbrowser|tao|taobao|coolnovo|saayaa|uc|mi|xiaomi|baidu|yandex|micromessenger|wechat|weibo|douban|suning|iqiyi|alipay|ali-ap|ali-ap-pd|ali-am|ali-tb|ali-tb-pd|ali-tm|ali-tm-pd”) {         return 444;     }<br>禁止指定系统访问<br>也有某些国产系统，例如 aliyun os 这样的，我也想禁止它的访问：</p>
+<pre><code>if ($http_user_agent ~* &quot;yunos&quot;) {         return 444;     } </code></pre><p>结论<br>根据以上可以看出，要对 UA 进行判断，规则就是：<br>    if ($http_user_agent ~* “UA关键词”) {         …     }<br>不过这种方法缺点很明显，因为 UA 实在太容易伪造了，不过防一下不经伪造的请求（例如国产搜索爬虫）还是可以的。当然也有些更靠谱的方式，例如对 session 的验证。</p>
+
       
 
       
-    </p></div>
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
     <div class="article-info article-info-index">
       
       
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/21/端口转发/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://yang217.github.io/2019/08/28/Nginx-禁止指定-UA-访问/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  <!--
+ * @Date: 2019-08-19 13:00:26
+ * @LastEditors: Jack.yang
+ * @LastEditTime: 2019-08-19 15:36:40
+ -->
+
+<nav id="article-nav">
+  
+  
+    <a href="/2019/08/27/浅谈网络掩码/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">浅谈网络掩码(转）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -253,306 +343,14 @@
 
 
 
-
-  
-    <!--
- * @Date: 2019-08-19 13:00:26
- * @LastEditors: Jack.yang
- * @LastEditTime: 2019-08-19 15:16:37
- -->
-<article id="post-分享个网络技术书站点" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/20/分享个网络技术书站点/">分享个网络技术书站点</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/20/分享个网络技术书站点/" class="archive-article-date">
-  	<time datetime="2019-08-20T02:15:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-20</time>
-</a>
-             <!-- 开始添加字数统计-->
-             
-              <!--
- * @Date: 2019-08-19 15:14:33
- * @LastEditors: Jack.yang
- * @LastEditTime: 2019-08-19 15:14:43
- -->
-<div style="margin-top:10px;">
-        <span class="post-time">
-          <span class="post-meta-item-icon">
-            <i class="fa fa-keyboard-o"></i>
-            <span class="post-meta-item-text">  字数统计: </span>
-            <span class="post-count">6.5k字</span>
-          </span>
-        </span>
-    
-        <span class="post-time">
-          &nbsp; | &nbsp;
-          <span class="post-meta-item-icon">
-            <i class="fa fa-hourglass-half"></i>
-            <span class="post-meta-item-text">  阅读时长: </span>
-            <span class="post-count">27分</span>
-          </span>
-        </span>
-    </div>
-
-              
-            <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://legacy.gitbook.com/@wizardforcel" target="_blank" rel="noopener">https://legacy.gitbook.com/@wizardforcel</a><br><a href="http://it-ebooks.flygon.net/" target="_blank" rel="noopener">http://it-ebooks.flygon.net/</a><br>
-        
-          <a class="article-more-a" href="/2019/08/20/分享个网络技术书站点/#more">more >></a>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/20/分享个网络技术书站点/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <!--
- * @Date: 2019-08-19 13:00:26
- * @LastEditors: Jack.yang
- * @LastEditTime: 2019-08-19 15:16:37
- -->
-<article id="post-Linux常用命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/19/Linux常用命令/">Linux常用命令</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/19/Linux常用命令/" class="archive-article-date">
-  	<time datetime="2019-08-19T06:55:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-19</time>
-</a>
-             <!-- 开始添加字数统计-->
-             
-              <!--
- * @Date: 2019-08-19 15:14:33
- * @LastEditors: Jack.yang
- * @LastEditTime: 2019-08-19 15:14:43
- -->
-<div style="margin-top:10px;">
-        <span class="post-time">
-          <span class="post-meta-item-icon">
-            <i class="fa fa-keyboard-o"></i>
-            <span class="post-meta-item-text">  字数统计: </span>
-            <span class="post-count">3.8k字</span>
-          </span>
-        </span>
-    
-        <span class="post-time">
-          &nbsp; | &nbsp;
-          <span class="post-meta-item-icon">
-            <i class="fa fa-hourglass-half"></i>
-            <span class="post-meta-item-text">  阅读时长: </span>
-            <span class="post-count">13分</span>
-          </span>
-        </span>
-    </div>
-
-              
-            <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>原文链接：<a href="https://blog.csdn.net/ljianhui/article/details/11100625" target="_blank" rel="noopener">https://blog.csdn.net/ljianhui/article/details/11100625</a><br>玩过Linux的人都会知道，Linux中的命令的确是非常多，但是玩过Linux的人也从来不会因为Linux的命令如此之多而烦恼，因为我们只需要掌握我们最常用的命令就可以了。
-        
-          <a class="article-more-a" href="/2019/08/19/Linux常用命令/#more">more >></a>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/19/Linux常用命令/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <!--
- * @Date: 2019-08-19 13:00:26
- * @LastEditors: Jack.yang
- * @LastEditTime: 2019-08-19 15:16:37
- -->
-<article id="post-JS-系列-转载" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/19/JS-系列-转载/">JS 系列 转载</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/19/JS-系列-转载/" class="archive-article-date">
-  	<time datetime="2019-08-19T06:09:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-19</time>
-</a>
-             <!-- 开始添加字数统计-->
-             
-              <!--
- * @Date: 2019-08-19 15:14:33
- * @LastEditors: Jack.yang
- * @LastEditTime: 2019-08-19 15:14:43
- -->
-<div style="margin-top:10px;">
-        <span class="post-time">
-          <span class="post-meta-item-icon">
-            <i class="fa fa-keyboard-o"></i>
-            <span class="post-meta-item-text">  字数统计: </span>
-            <span class="post-count">3.4k字</span>
-          </span>
-        </span>
-    
-        <span class="post-time">
-          &nbsp; | &nbsp;
-          <span class="post-meta-item-icon">
-            <i class="fa fa-hourglass-half"></i>
-            <span class="post-meta-item-text">  阅读时长: </span>
-            <span class="post-count">13分</span>
-          </span>
-        </span>
-    </div>
-
-              
-            <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>JS 系列一：var、let、const、解构、展开、函数<br>引言<br>JS系列暂定 27 篇，从基础，到原型，到异步，到设计模式，到架构模式等，此为第一篇：是对 var、let、const、解构、展开、函数 的总结。</p>
-        
-          <a class="article-more-a" href="/2019/08/19/JS-系列-转载/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/19/JS-系列-转载/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -575,8 +373,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
