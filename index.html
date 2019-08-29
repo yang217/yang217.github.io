@@ -162,6 +162,103 @@
  * @LastEditors: Jack.yang
  * @LastEditTime: 2019-08-19 15:16:37
  -->
+<article id="post-小硬盘的福利-使用rclone挂载云存储" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/29/小硬盘的福利-使用rclone挂载云存储/">小硬盘的福利--使用rclone挂载云存储</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/29/小硬盘的福利-使用rclone挂载云存储/" class="archive-article-date">
+  	<time datetime="2019-08-29T10:38:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-29</time>
+</a>
+             <!-- 开始添加字数统计-->
+             
+              <!--
+ * @Date: 2019-08-19 15:14:33
+ * @LastEditors: Jack.yang
+ * @LastEditTime: 2019-08-19 15:14:43
+ -->
+<div style="margin-top:10px;">
+        <span class="post-time">
+          <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <span class="post-meta-item-text">  字数统计: </span>
+            <span class="post-count">556字</span>
+          </span>
+        </span>
+    
+        <span class="post-time">
+          &nbsp; | &nbsp;
+          <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <span class="post-meta-item-text">  阅读时长: </span>
+            <span class="post-count">2分</span>
+          </span>
+        </span>
+    </div>
+
+              
+            <!-- 添加完成 -->
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>背景   <br>很多情况下，我们部署Kodcloud的服务器硬盘空间是有限的，想要找到一款速度好空间大又廉价的服务器也不容易，所以时常听到要求Kodcloud尽快支持云存储的需求。<br>在KOD团队开发出完善的云存储支持之前，我先在此介绍一个小工具满足大伙的临时之需——rclone.<br>介绍rclone是一款用来同步文件的命令行工具，支持非常多的存储，比如各大网盘，onedrive,google drive.dropbox….<br>此外还支持FTP.SFTP,非常强大，完整的存储支持列表如下:<br>Amazon Drive<br>Amazon S3 等<br>至于它怎么方便强大，以及相关命令的使用请各位自行去了解，在此只介绍我们Kodcloud非常需要的功能——挂载。在服务器支持fuse的情况下，我们可以将上述列表中任何存储挂载至本地，这样你的服务器就“多了一块硬盘”，而我们的kodcloud就可以像管理本地文件一样管理这个“新硬盘”了！不再废话，教程开始~ 配置 安装rclone<br><img src="http://118.25.47.215:2323/rcloe.png" alt="图片挂啦"><br>这里我们直接下载的可执行文件，如果你想自行编译，或者你是arm的机器请去rclone官网了解相关信息. 配置存储，我手上有一个2T硬盘的服务器…开启了FTP，所以在此就以FTP存储为例。<br>cd /root/rclone-v1.41-linux-amd64<br>./rclone config<br>然后按照提示操作<br> ./rclone mount ftp: 云服务器本地目录 –allow-other –vfs-cache-mode writes –allow-non-empty<br>整个过程按照提示很容易操作，不再赘述。 挂载   rclone的挂载需要fuse支持，一般的KVM架构服务器都是没问题的，openvz架构的可以工单咨询要求支持，搞不搞的定就看你自己了。。。 nohup rclone mount ftp: 本地目录 –allow-other &amp;   只需一条命令,其中ftp:指的是你创建存储时自定义的命名再加上冒号，上面例子中我命名就为ftp。就这么简单，现在刷新Kod网页，你就可以像在本地一样地管理文件啦。</p>
+<p>url：<a href="https://www.nozarc.com/2018/01/21/kodcloud-rclone/" target="_blank" rel="noopener">https://www.nozarc.com/2018/01/21/kodcloud-rclone/</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/29/小硬盘的福利-使用rclone挂载云存储/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <!--
+ * @Date: 2019-08-19 13:00:26
+ * @LastEditors: Jack.yang
+ * @LastEditTime: 2019-08-19 15:16:37
+ -->
 <article id="post-算法的时间复杂度和空间复杂度-总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -549,107 +646,9 @@
 
 
   
-    <!--
- * @Date: 2019-08-19 13:00:26
- * @LastEditors: Jack.yang
- * @LastEditTime: 2019-08-19 15:16:37
- -->
-<article id="post-Untitled" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/23/Untitled/">为什么要学linux(转载）</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/23/Untitled/" class="archive-article-date">
-  	<time datetime="2019-08-23T11:17:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-23</time>
-</a>
-             <!-- 开始添加字数统计-->
-             
-              <!--
- * @Date: 2019-08-19 15:14:33
- * @LastEditors: Jack.yang
- * @LastEditTime: 2019-08-19 15:14:43
- -->
-<div style="margin-top:10px;">
-        <span class="post-time">
-          <span class="post-meta-item-icon">
-            <i class="fa fa-keyboard-o"></i>
-            <span class="post-meta-item-text">  字数统计: </span>
-            <span class="post-count">3.2k字</span>
-          </span>
-        </span>
-    
-        <span class="post-time">
-          &nbsp; | &nbsp;
-          <span class="post-meta-item-icon">
-            <i class="fa fa-hourglass-half"></i>
-            <span class="post-meta-item-text">  阅读时长: </span>
-            <span class="post-count">11分</span>
-          </span>
-        </span>
-    </div>
-
-              
-            <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天在知乎上边，翻到了一篇文章，作者诙谐幽默的故事打动了我，我觉得有必要和大家分享一些<br>
-        
-          <a class="article-more-a" href="/2019/08/23/Untitled/#more">more >></a>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/23/Untitled/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
