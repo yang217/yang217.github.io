@@ -6,16 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://yang217.github.io">
-  <title>Archives | 让生活丰富起来</title>
+  <title>vim操作命令 | 让生活丰富起来</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="web,web前端,js,javascript,Vue,Vue2.0,微信开发,微信小程序,微信小程序开发">
-<meta property="og:type" content="website">
-<meta property="og:title" content="让生活丰富起来">
-<meta property="og:url" content="https://yang217.github.io/archives/page/3/index.html">
+  <meta name="description" content="文章目录 vim的几种模式扩展命令模式命令：命令模式高频命令：命令模式进阶命令：">
+<meta name="keywords" content="web,web前端,js,javascript,Vue,Vue2.0,微信开发,微信小程序,微信小程序开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vim操作命令">
+<meta property="og:url" content="https://yang217.github.io/2019/12/23/vim操作命令/index.html">
 <meta property="og:site_name" content="让生活丰富起来">
+<meta property="og:description" content="文章目录 vim的几种模式扩展命令模式命令：命令模式高频命令：命令模式进阶命令：">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://yang217.github.io/2019/12/23/vim操作命令/%5Cimages%5Cpasted-5.png%5C">
+<meta property="og:updated_time" content="2019-12-23T09:56:52.733Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="让生活丰富起来">
+<meta name="twitter:title" content="vim操作命令">
+<meta name="twitter:description" content="文章目录 vim的几种模式扩展命令模式命令：命令模式高频命令：命令模式进阶命令：">
+<meta name="twitter:image" content="https://yang217.github.io/2019/12/23/vim操作命令/%5Cimages%5Cpasted-5.png%5C">
   
     <link rel="alternative" href="/atom.xml" title="让生活丰富起来" type="application/atom+xml">
   
@@ -155,133 +161,230 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <!--
+ * @Date: 2019-08-19 13:00:26
+ * @LastEditors: Jack.yang
+ * @LastEditTime: 2019-08-19 15:16:37
+ -->
+<article id="post-vim操作命令" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      vim操作命令
+    </h1>
+  
+
+        
+        <a href="/2019/12/23/vim操作命令/" class="archive-article-date">
+  	<time datetime="2019-12-23T09:50:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-23</time>
+</a>
+             <!-- 开始添加字数统计-->
+             
+              <!--
+ * @Date: 2019-08-19 15:14:33
+ * @LastEditors: Jack.yang
+ * @LastEditTime: 2019-08-19 15:14:43
+ -->
+<div style="margin-top:10px;">
+        <span class="post-time">
+          <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <span class="post-meta-item-text">  字数统计: </span>
+            <span class="post-count">1.2k字</span>
+          </span>
+        </span>
     
+        <span class="post-time">
+          &nbsp; | &nbsp;
+          <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <span class="post-meta-item-text">  阅读时长: </span>
+            <span class="post-count">4分</span>
+          </span>
+        </span>
+    </div>
+
+              
+            <!-- 添加完成 -->
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>文章目录</p>
+<p>vim的几种模式<br>扩展命令模式命令：<br>命令模式高频命令：<br>命令模式进阶命令：</p>
+<a id="more"></a>
+<p>vim高级玩法<br>小结：</p>
+<p> 在Linux中编辑文件的场景非常之多，掌握一些关键命令和技巧。能够大大提高效率，使用体验也顺畅很多。</p>
+<p> 1976年由Bill Joy完成编写vi，并由BSD发布。从2006年开始，作为“单一UNIX规范”的一部分，vi或vi的一种变形版本一定会在类UNIX系统中找到。</p>
+<p>vim是vi的一个变形版本，功能更加强大，体验更好。</p>
+<p>vim的几种模式<br> 新手使用vim最麻烦的就是模式，因为经常忘记自己处在何种模式，无意键入某个字符，就切换到其他模式。</p>
+<p>vim的模式有以下几种：其中红色部分和命令模式最常使用。</p>
+<p>命令模式：启动后的默认模式。其他模式，通过【Esc】和【Ctrl+C】可以退回到该模式</p>
+<p>插入模式：此模式下可以编辑。i: 在当前光标开始插入。 o: 进入插入模式，并在光标下一行添加一个新的空行</p>
+<p>扩展命令模式： 使用“：” 切换到此模式。</p>
+<p>可视模式。在该模式下，可以使用方向键进行内容选择，然后进行复制、粘贴或其他操作。在命令模式下，使用“v”进入可视模式。</p>
+<p>v: 进入可视模式，方向键可以选择文本。 x可以剪切，y复制，d删除</p>
+<p>当输入了命令以后，VIM 将回到普通模式，这时可以按 p 或 P 进行粘贴。普通模式下有关复制和粘贴的命令：p或P 在当前位置粘贴剪贴板的内容，p 粘在光标所在字符后面，P 粘在前面。</p>
+<p>块操作模式：和可视模式功能类似，不在赘述。</p>
+<p>编辑模式：和插入模式功能类似，不在赘述。<br><img src="%5Cimages%5Cpasted-5.png%5C" alt="upload successful"><br>扩展命令模式命令：<br>​ 常用的命令几乎都是编辑后退出，保存等操作。<br>:q 直接退<br>:q! 退出不保存<br>:wq 退出保存<br>:wq! 强行退出保存<br>命令模式高频命令：<br>G 移动到文件最后一行</p>
+<p>nG 移动到文件的n行</p>
+<p>/word 向下查找关键字word</p>
+<p>n 重复前一个查找</p>
+<p>N 反向重复前一个查找</p>
+<p>:n,$s/a/b/g 替换从第n行到最后一行中的所有a为b。n为. 表示从当前行开始。</p>
+<p>u 撤销前一个操作，前提是还没保存。</p>
+<p>d$ 删除光标后该行所有字符</p>
+<p>dd 剪切该行</p>
+<p>yy 复制当前行内容</p>
+<p>p 粘贴到下一行</p>
+<p>命令模式进阶命令：<br>:new 新增水平窗口<br>:new filename 新增水平窗口并在水平窗口上显示指定文件的内容。可以在不退出vim的情况下，查看某个文件。<br>:set nu 显示行号<br>:set nonu 不显示行号<br>:set ic 查找时忽略大小写<br>:set noic 查找时不忽略大小写<br>vim高级玩法<br>shell切换： 如果在编辑时，想执行一条Linux命令。但是又不想退出编辑界面，可以使用下面的的命令</p>
+<p>:！&lt;Linux命令&gt; ,当Linux命令执行完毕后按回车就又回到了编辑vim环境。</p>
+<p>分隔窗口：这和上文提到可以通过: new新增水平窗口不一样，new新增的窗口只能查看不能编辑。</p>
+<p>在vim进入多窗口后，可以改通过 【Ctrl+W】切换。</p>
+<p>在启动vim时使用“-o”或“-O”，并加上需要同时编辑的多个文件名，其中“-o”是使用水平分割的多窗口；“-O”是使用垂直分割的多窗口。使用如下命令时，vim就进入如图所示的多窗口环境。</p>
+<p>键映射</p>
+<p>映射类似就是定义一个快捷键用于执行一个宏。下面是一个键映射的简单例子，将功能键F5定义为在行尾输入分号（;），在vim命令模式下输入以下内容。</p>
+<p>  :map <f5> i<end>;<esc><br>1
+上述定义完成后，当在命令模式下键入功能键＜F5＞时，vim会依次执行 输入字母“i”（进行插入模式）、按【End】键（移动到当前行尾）、输入分号、按【Esc】键（返回命令模式）。</esc></end></f5></p>
+<p>这个功能，个人觉得不能提升多少效率。从未使用。<br>小结：<br>Linux中vim文中提到的命令和用法几乎可以应对开发中90%以上的场景。<br>原文链接：<a href="https://blog.csdn.net/gexiaoyizhimei/article/details/102715340" target="_blank" rel="noopener">https://blog.csdn.net/gexiaoyizhimei/article/details/102715340</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/21/端口转发/" class="archive-article-date">
-  	<time datetime="2019-08-21T10:48:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/21/端口转发/">端口转发</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://yang217.github.io/2019/12/23/vim操作命令/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  <!--
+ * @Date: 2019-08-19 13:00:26
+ * @LastEditors: Jack.yang
+ * @LastEditTime: 2019-08-19 15:36:40
+ -->
+
+<nav id="article-nav">
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/20/分享个网络技术书站点/" class="archive-article-date">
-  	<time datetime="2019-08-20T02:15:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-20</time>
-</a>
+  
+    <a href="/2019/12/12/自己收藏的好用的工具/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">自己收藏的好用的工具</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/20/分享个网络技术书站点/">分享个网络技术书站点</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/19/Linux常用命令/" class="archive-article-date">
-  	<time datetime="2019-08-19T06:55:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/19/Linux常用命令/">Linux常用命令</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/19/JS-系列-转载/" class="archive-article-date">
-  	<time datetime="2019-08-19T06:09:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/19/JS-系列-转载/">JS 系列 转载</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/2/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span>
-    </nav>
   
 
 
@@ -305,8 +408,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
