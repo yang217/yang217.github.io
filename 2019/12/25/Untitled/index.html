@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://yang217.github.io">
-  <title>为什么要学linux(转载） | 让生活丰富起来</title>
+  <title>mysql基本操作 | 让生活丰富起来</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今天在知乎上边，翻到了一篇文章，作者诙谐幽默的故事打动了我，我觉得有必要和大家分享一些">
+  <meta name="description" content="h1  1、库操作    必须首先登录到mysql 中，    有关操作都是在mysql 的提示符下进行，    而且每个命令以分号结束。">
 <meta name="keywords" content="web,web前端,js,javascript,Vue,Vue2.0,微信开发,微信小程序,微信小程序开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="为什么要学linux(转载）">
-<meta property="og:url" content="https://yang217.github.io/2019/08/23/Untitled/index.html">
+<meta property="og:title" content="mysql基本操作">
+<meta property="og:url" content="https://yang217.github.io/2019/12/25/Untitled/index.html">
 <meta property="og:site_name" content="让生活丰富起来">
-<meta property="og:description" content="今天在知乎上边，翻到了一篇文章，作者诙谐幽默的故事打动了我，我觉得有必要和大家分享一些">
+<meta property="og:description" content="h1  1、库操作    必须首先登录到mysql 中，    有关操作都是在mysql 的提示符下进行，    而且每个命令以分号结束。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-23T11:19:09.091Z">
+<meta property="og:updated_time" content="2019-12-25T09:00:45.804Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="为什么要学linux(转载）">
-<meta name="twitter:description" content="今天在知乎上边，翻到了一篇文章，作者诙谐幽默的故事打动了我，我觉得有必要和大家分享一些">
+<meta name="twitter:title" content="mysql基本操作">
+<meta name="twitter:description" content="h1  1、库操作    必须首先登录到mysql 中，    有关操作都是在mysql 的提示符下进行，    而且每个命令以分号结束。">
   
     <link rel="alternative" href="/atom.xml" title="让生活丰富起来" type="application/atom+xml">
   
@@ -171,13 +171,13 @@
         
   
     <h1 class="article-title" itemprop="name">
-      为什么要学linux(转载）
+      mysql基本操作
     </h1>
   
 
         
-        <a href="/2019/08/23/Untitled/" class="archive-article-date">
-  	<time datetime="2019-08-23T11:17:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-23</time>
+        <a href="/2019/12/25/Untitled/" class="archive-article-date">
+  	<time datetime="2019-12-25T08:58:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-25</time>
 </a>
              <!-- 开始添加字数统计-->
              
@@ -191,7 +191,7 @@
           <span class="post-meta-item-icon">
             <i class="fa fa-keyboard-o"></i>
             <span class="post-meta-item-text">  字数统计: </span>
-            <span class="post-count">3.2k字</span>
+            <span class="post-count">1.3k字</span>
           </span>
         </span>
     
@@ -200,7 +200,7 @@
           <span class="post-meta-item-icon">
             <i class="fa fa-hourglass-half"></i>
             <span class="post-meta-item-text">  阅读时长: </span>
-            <span class="post-count">11分</span>
+            <span class="post-count">5分</span>
           </span>
         </span>
     </div>
@@ -212,59 +212,198 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>今天在知乎上边，翻到了一篇文章，作者诙谐幽默的故事打动了我，我觉得有必要和大家分享一些<br> <a id="more"></a></p>
-<p>作者：ZHANG Zaikun<br>链接：<a href="https://www.zhihu.com/question/20117703/answer/31850471" target="_blank" rel="noopener">https://www.zhihu.com/question/20117703/answer/31850471</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
-<p>起这么吓人的一个题目，其实只是想写一下 Linux。但我保证决不做标题党。 请注意，这是一篇充满正能量富有哲理的小清新鸡汤文，操作系统狂热分子请止步。</p>
-<p>用 Linux 五年多了，但此前我从来没有就此写过一句话。不过我倒是经常问别人：你用什么操作系统？尤其对刚认识的人。因为用 Linux 的人很可能跟我三观接近，比较容易成为朋友 (警告：逆命题不成立！)。一个无关痛痒的问题能提供如此重要的信息，有饸饹而不喂之？</p>
-<p>“三观” 这个词眼下很流行。这原本是一个严肃的概念，现在也不可避免地被解构了。我说的是它的本意。一个人的三观是什么决定的？无非是她/他经历的人与事。正常情况下，能影响到三观的经历只占极少数。对于跟我一般固执的人，这个比例就更低。如果连中午吃馒头还是米饭都管用，这三观也忒不值钱了。</p>
-<p>那些重要的人恐怕在回忆录甚至遗书里才好写，重要的事倒是可以提前说道说道。对我而言，从 Windows 转向 Linux 可算是其中之一。</p>
-<p>一个操作系统而已，似乎跟馒头和米饭没多大差别，有这么重要吗？</p>
-<p>回答这个问题之前，我们先来看看 Linux 与 Windows 最本质的区别在哪里。有人会说前者免费，后者需要买 (或偷)。这只是对 “free software” 的曲解。在我看来，二者最重要的区别乃是它们对自己的用户所做的假设。对于 Linux，这个假设是：</p>
-<p>用户知道自己想要什么，也明白自己在做什么，并且会为自己的行为负责。</p>
-<p>而 Windows 则恰好相反：</p>
-<p>用户不知道自己想要什么，也不明白自己在做什么，更不打算为自己的行为负责。</p>
-<p>说得更直接一些，前者假定用户是负责任的聪明人，后者反之。Linux 用户不必沾沾自喜，Windows 用户先把刀放下。这些只是假设，它们的 (不是我的) 假设。</p>
-<p>这么滴吧，我讲个故事，一来呢，测验一下你的智商；二来呢，缓和一下尴尬的气氛。听好，可招笑了。说，要把大象装冰箱 … 呃，不，故事是这样的：</p>
-<p>一位雕刻家爱上了自己创作的女神雕像。他每天对着雕像说话。最后，那座雕像真的变成了一位女神。</p>
-<p>这个故事还有另一个版本，你肯定听过：</p>
-<p>在一所小学里，心理学家随机选择 20% 的学生，告诉老师他们比别人更聪明。一年之后，这些学生的 IQ 测验果然 (在统计意义上) 更佳。</p>
-<p>这个故事流传甚广，但很少有人给出参考文献。这是历史上真实存在的一个试验，1963 年由罗胜道与贾步升在美国加州南旧金山市橡树小学实施。罗是加州大学心理学家教授，而贾时任橡树小学校长。二人于 1968 年就此试验发表了《课堂上的毕马隆效应》，这里是 BibTeX：</p>
-<p>@book{pygmalion,<br>    title={Pygmalion in the Classroom: Teacher Expectation and Pupils’ Intellectual Development},<br>    author={Rosenthal, R. and Jacobson, L.},<br>    url={<a href="http://books.google.pt/books?id=9HbuAAAAMAAJ}" target="_blank" rel="noopener">http://books.google.pt/books?id=9HbuAAAAMAAJ}</a>,
-    lccn={lc68019667},<br>    year={1968},<br>    publisher={Holt, Rinehart and Winston}<br>}
-毕马隆是希腊神话里的一位雕刻家，就是爱上自己作品的那位。这 (两) 个故事告诉我们：第一，只要功夫深，不怕女神不动心；第二，如果有心理学家来你们学校做试验，躲得越远越安全 —— 80% 和 20%，你觉得哪个几率更大一些？</p>
-<p>细心的人可能注意到，上面的故事还告诉我们，他人的期望会在一定程度上影响我们的行为。这就是罗胜道与贾步升所说的 “毕马隆效应”。</p>
-<p>Windows 如何影响用户的行为我不清楚，而 Linux 对用户的影响倒是十分有意思。既然假定 “用户知道自己想要什么，也明白自己在做什么，并且会为自己的行为负责”， 如果发生毕马隆效应，那么相当一部分用户会慢慢学会用自己的脑袋思考，按自己的意志行事，并为自己的行为负责。这就是自由，也是 “free software” 之 “free” 的本意。</p>
-<p>说到自由，不能不提 John Stuart Mill (约翰·斯图亚特·穆勒) 的 On Liberty (《论自由》)。 我有一本严复先生译的《群己权界论》，买英文版赠的。由于是赠本，印刷装帧不免略显简陋。一次，我的一个同学拿起这本书看了两眼，问我，这是什么书，不是哪个邪教的教义吧？严复恐怕想不到，在他身后近百年，在他的国家二度成为共和国之后六十多年，一个受过良好教育的高级知识分子会把他的译著当做 “邪教教义”。</p>
-<p>可能有人要问，所谓的 “按自己的意志行事” 不容易发展为自私自利吗？的确如此，如果没有后面那句 “并为自己的行为负责” 的话。这就是严复把 “On Liberty” 译为“群己权界论” 的原因。任何一个人，只要不是离群索居，她/他的自由就有一定的界限，而所谓 “为自己的行为负责” 至少包括遵守界限并承担越界的一切后果。自由绝不等于为所欲为。如果有人说 “free software” 就是用户可以为所欲为的软件，那还不如认为它是 “免费软件”。</p>
-<p>前两天听到一个有意思的观点：全能型政府治理下的老百姓往往公德心不太好。比观点更有意思的是解释：如果家里来了一个保姆，请来之后才发现他什么都管，从头到脚为你立一堆规矩，更不幸的是这个保姆还辞不掉，那很多人可能会 “理性地” 选择与保姆对着干 —— 乱扔烟头、随地大小便、扰乱他干活。观点我同意，但解释我不敢苟同。在我看来，这种现象跟操作系统影响用户行为是一个道理，不过是毕马隆效应罢了。既然假定老百姓素质不高、无法自理，那么久而久之这可能会变成 (统计意义上的) 现实。与之相关的是陈港生的名言 “国人需要管”。这句话本身无可挑剔。“群己权界” 本来就暗示每个人都要为他人让渡自己的一部分自由；在社会上这需要通过管理来实现，所以 “每个社会人都需要管”，国人自然不例外。不过，如果陈先生的意思是 “国人比别人更需要管，因为国人比别人更不具备公民素质”，那可要小心了。一旦这种言论大行其道，其毕马隆效应将是非常可悲的。另外，不难注意到，这其实是一种种族歧视言论。在一个高级知识分子把《群己权界论》当邪教教义的社会里，即便有人堂而皇之散布这样的言论也不奇怪。当然，这都是诛心之论，陈先生是好的。</p>
-<p>好像越扯越远了，说好的 Linux 呢？其实我对 Linux 的了解十分有限，从来是现学现用，谷哥就是我的老师。所以，我没有资格在技术层面上谈论 Linux。不过有几个非技术问题倒是可以探讨一下。</p>
-<p>问题一：Linux 对用户友好吗？</p>
-<p>回答：“Linux is user-friendly. It’s just very selective about who its friends are.” 这句话没有出处，主语本来是 Unix，但 Linux 是 Unix 的一种 (吗)，所以它对 Linux 也成立 (吧)。很多人把这句话当作笑话，但对照一下 Linux 对用户所做的假设，我们会发现这句话严肃至极，一点都不好笑。Linux 对用户很友好，但它对自己的用户是有假定的。如果你感觉不到他的友好，那说明你不满足假定。</p>
-<p>问题二：听你一说，Linux 好像很高大上的感觉。如果我弃 Windows 从 Linux，用不了多久就会升职加薪当上总经理出任 CEO 迎娶白富美走向人生巅峰吧？想想还有点小激动呢！</p>
-<p>回答：我不知道你是从哪里听出 Linux 高大上的。至于你的问题嘛，我还是再讲个故事吧：</p>
-<p>一个女生要从三个追求者中选择一个作为自己的白马王子。三人通过重重考验，来到最后一关。女生要求他们亮出自己的笔记本电脑，结果发现第一个追求者用的是 Windows，第二个用的是 Linux，而剩下那个用的当然是 Mac 了。最后她选了胸大，哦不，最有钱的那一个。</p>
-<p>对了，你不会天真到以为用 Mac 的就一定有钱吧？</p>
-<p>问题三：上面那个故事里的女生到底应该选哪个？</p>
-<p>回答：如果你对故事里给出的答案不满意，这个问题就难了。不过，如果这个女生想做女王大人，断不可选择第二个追求者。否则，根据毕马隆效应，白马王子可能会因抑郁而自尽。</p>
-<p>问题四：到底 Windows 和 Linux 哪个好？我该用哪一个？</p>
-<p>回答：Linux 和 Windows 哪个好？这个问题就跟纠缠豆腐脑该加糖还是加盐一样没有意义。操作系统只是一个工具，适合你的就是最好的。Linux 传教士们，省省吧！“自由即责任，世人多畏之。” 不论到什么时候，Linux 用户都将是相对少数，这是人性决定的。如果真的理解 Linux 的哲学，那你应该明白，每一个人都可以问 “我该用哪个”，但任何人都不应管 “她/他该用哪个”。Windows 支持者们，不要再说 “Linux 我试过，太难用，跟 Windows 差距太大”。这很可能是你的真实感受，但明智的做法是装作从来没试过，不要宣扬。原因很简单：“若无力驾驭，自由便是负担。”</p>
-<p>问题五：你怎么不说 Mac？</p>
-<p>回答：买不起。</p>
-<p>问题六：说好的哲理呢？说好的正能量呢？说好的小清新呢？说好的鸡汤呢？我看你就是一个 “操作系统狂热分子” 吧？</p>
-<p>回答：曾经是，但经过积极改造，现在已经重新做人，成为一个实用主义者了。只要满足以下三条，任何操作系统我都乐于接受：</p>
-<ol>
-<li>用户自主。用户决定系统如何工作，而不是反之。任何提示用户 “正在安装更新，请不要关机” 的行为都跟不以结婚为目的的恋爱是一个性质。用户是机器的主人，操作系统只是用户请来的助手；用户知道自己想要什么，明白自己在做什么，也会为自己的行为负责；操作系统尽量少说话，更不要下命令。用户自主还蕴含系统的可定制性：用户可以对系统做任何配置或改造。</li>
-</ol>
-<ol start="2">
-<li>用户知情。如有必要，用户可以获知系统工作的任何细节，而不是仅仅被告知 “正在处理一些事情” —— 这比不以结婚为目的的恋爱还让人无法接受。</li>
-</ol>
-<ol start="3">
-<li>系统高效。在此系统下用户可以很方便地获得各种工具，并且不同工具能很容易地组装在一起完成复杂的工作。机器更多是用来干活的，所以这一点很重要。</li>
-</ol>
-<p>以此为标准，Linux 目前是个不错的选择，而 Windows 不满足任何一条。</p>
-<p>怎么，你仍然认为我是操作系统狂热分子？对不起，真不是，我只是选择了自由。</p>
-<p>Liberty means responsibility. That is why most men dread it.<br> —  George Bernard Shaw<br>Unless a man has talents to make something of himself, freedom is an irksome burden.<br> —  Eric Hoffer</p>
+        <p>h1  1、库操作<br>    必须首先登录到mysql 中，<br>    有关操作都是在mysql 的提示符下进行，<br>    而且每个命令以分号结束。<br>    <a id="more"></a><br>    5.1 创建数据库<br>    命令：create database &lt;数据库名&gt;;<br>            例1：创建一个名为test 的数据库<br>            mysql&gt; create database test;</p>
+<pre><code>5.2 显示所有的数据库
+命令：show databases;（注意：最后有个s）
+        mysql&gt; show databases;
 
+5.3 删除数据库
+命令：drop database &lt;数据库名&gt;;
+        例2：删除名为test 的数据库
+        mysql&gt; drop database test;
+
+5.4 连接数据库
+命令： use &lt;数据库名&gt;;
+        例3：连接david 数据库
+        mysql&gt; use david;
+
+5.5 查看当前使用的数据库
+命令：select database();
+        mysql&gt; select database();
+
+5.6 当前数据库包含的表信息
+命令：show tables;（注意：最后有个s）
+        mysql&gt; show tables;
+2、表操作–DDL
+    操作之前应连接某个数据库。
+
+2.1 建立表
+    create table &lt;表名&gt;  
+    (&lt;字段名1&gt; &lt;类型1&gt; [,..&lt;字段名n&gt; &lt;类型n&gt;]);
+
+    create table tablename  
+    ( 
+        col1 type1 [not null] [primary key], 
+        col2 type2 [not null],..
+    );
+
+    create table myclass (
+        id int(4) not null primary key auto_increment,
+        name varchar(20) not null,
+        sex int(4) not null default &apos;0&apos;,
+        degree double(16,2)
+    );
+
+
+    补充：根据已有的表创建新表。
+    create table tab_new like tab_old; (只有表结构) 
+
+    create table tab_new as select * from tab_old; 
+      (既包含表结构，又包含表数据)
+
+
+    mysql&gt; create table myclass2 like myclass;
+        Query OK, 0 rows affected (0.00 sec)
+
+    insert  into  myclass  
+        values(1, &apos;david&apos;, 1, 20130417.16);
+
+
+    create  table  myclass3  
+    as   
+    select  *  from  myclass;
+
+    Query OK, 1 row affected (0.07 sec)
+
+
+    select  *  from  myclass3;
+
+
+2.2 获取表结构
+    desc 表名; /
+    show columns from 表名;
+
+
+获取myclass &amp; myclass2 表结构    
+    desc  myclass;
+    show  columns  from  myclass2;
+
+
+2.3 删除表
+命令：drop table &lt;表名&gt;;
+
+例：删除表名为 myclass3 的表
+    drop  table  myclass3;
+
+
+2.4 更改表名
+命令：rename  table 原表名 to 新表名;
+
+例：将表 myclass2 名字更改为 myclass4
+    rename  table  myclass2  to  myclass4;
+
+6.5 在表中增加字段
+命令：alter table 表名 add 字段 类型 其他;
+
+例：在表 myclass 中 
+添加了一个字段passtest，类型为int(4)，默认值为0。
+    alter  table  myclass   
+    add  passtest  int(4)  default  &apos;0&apos;;
+
+    扩展：
+    mysql在表的某一位置增加一列的命令
+        1.如果想在一个已经建好的表中添加一列，可以用诸如：
+        alter  table  t1   
+        add  column  addr  varchar(20)  not  null; 
+
+        这条语句会向已有的表t1中加入一列addr， 
+        这一列在表的最后一列位置。
+
+
+        2.如果我们希望添加在指定的一列，可以用：
+        alter  table  t1  
+        add  column  addr  varchar(20)  not null  
+        after  user1;
+        注意，上面这个命令的意思是说添加addr列到user1这一列后面。
+
+
+        3.如果想添加到第一列的话，可以用：
+        alter  table  t1   
+        add  column  addr  varchar(20)  not  null  
+        first;
+
+
+        4.将表test，列名def改为unit,关键字是change
+        alter  test  change  def  unit  varchar(10);
+
+        5.将表test中的列名def的列删除，关键字是drop  column
+        alter  table  test  drop  column  def ;
+
+
+其他解决方案
+    没有必要在建表时一定要按
+        Name Varchar2(11), Age Number(3),Sex Char(1)，
+
+        当你把数据表建好时，select 的时候就可以改变查询的结果了
+
+在SQL表中，怎样把原先的字段改变位置？
+        name,号码,住址,关系,ID
+
+        1)把这个表rename ；
+            rename  table1  to  table2; 
+
+        2)重新创建一个表
+            create table table1  
+            as  
+            select ID,name,号码,住址,关系 from table2; 
+
+        3)增加其他索引等对象。</code></pre><p>3、数据操作</p>
+<p>3.1 插入数据</p>
+<p>命令：insert into &lt;表名&gt; [( &lt;字段名1&gt;[,..&lt;字段名n &gt; ])]<br>      values ( 值1 )[, ( 值n )];</p>
+<p>例：向 myclass 表中插入以下记录，留空的表示使用默认值。<br>    mysql&gt; insert into myclass<br>    (id, name, sex, degree, passtest)<br>    values(1, ‘david’, 1, 80.56, 78);   </p>
+<pre><code>Query OK, 1 row affected (0.00 sec)
+
+
+mysql&gt; insert into myclass  
+        values(2, &apos;sandy&apos;, 0, 100, 90);
+
+Query OK, 1 row affected (0.00 sec)
+
+
+mysql&gt; insert into myclass (id, name, sex, degree)  
+        values(3, &apos;renee&apos;, 0, 90.34);
+
+Query OK, 1 row affected (0.00 sec)
+
+
+mysql&gt; insert into myclass (id, name) values(4, &apos;china&apos;);
+Query OK, 1 row affected (0.00 sec)     </code></pre><p>3.2 查询表中的数据</p>
+<pre><code>a. 查询所有行
+    命令：select &lt;字段1，字段2，...&gt;  
+        from &lt; 表名 &gt; where &lt; 表达式 &gt;;
+
+    例1：查看表 myclass 中所有数据
+    mysql&gt; select * from myclass;       
+
+    例2：查询表 david 相关信息
+    mysql&gt; select * from myclass where name=&apos;Kevin&apos;;
+
+b. 查询前几行数据
+    例如：查看表 myclass 中前2行数据
+    mysql&gt; select * from myclass limit 2;
+    或者：
+    select * from myclass order by id limit 2;
+
+    扩展：
+    select * from table limit m,n;
+    其中m是指记录开始的index，从0开始，表示第一条记录
+    n是指从第m+1条开始，取n条。
+    select * from tablename limit 2,4
+    即取出第3条至第6条，4条记录     </code></pre><p>3.3 删除表中的数据<br>    命令：delete from 表名 where 表达式;</p>
+<pre><code>例如：删除表 myclass 中编号为4的记录
+mysql&gt; delete from myclass where id=4;  </code></pre><p>3.4 修改表中的数据<br>    update 表名 set 字段 = 新值,… where 条件;</p>
+<pre><code>例：修改 myclass 表中编号为1的记录，将degree 值改成89.99
+    mysql&gt; update myclass set degree=89.99 where id=1;</code></pre>
       
 
       
@@ -343,7 +482,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://yang217.github.io/2019/08/23/Untitled/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://yang217.github.io/2019/12/25/Untitled/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -362,18 +501,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/08/25/史上最污技术解读，我竟然秒懂了/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          史上最污技术解读，我竟然秒懂了
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/08/22/在-Node-js-中将-SVG-图像转换为PNG，JPEG，TIFF，WEBP和HEIF格式/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">在 Node.js 中将 SVG 图像转换为PNG，JPEG，TIFF，WEBP和HEIF格式</div>
+    <a href="/2019/12/23/vim操作命令/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vim操作命令</div>
       <i class="icon-circle-right"></i>
     </a>
   
